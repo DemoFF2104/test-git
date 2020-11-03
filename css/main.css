@@ -1,4 +1,266 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/roboto-bold-italic.eot");
+  src: url("../fonts/roboto-bold-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-bold-italic.woff2") format("woff2"), url("../fonts/roboto-bold-italic.woff") format("woff"), url("../fonts/roboto-bold-italic.ttf") format("truetype");
+  src: url("../fonts/roboto-bold-italic.woff2") format("woff2"), url("../fonts/roboto-bold-italic.woff") format("woff"), url("../fonts/roboto-bold-italic.ttf") format("truetype");
+  src: url("../fonts/roboto-bold-italic.woff2") format("woff2"), url("../fonts/roboto-bold-italic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/roboto-italic.eot");
+  src: url("../fonts/roboto-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-italic.woff2") format("woff2"), url("../fonts/roboto-italic.woff") format("woff"), url("../fonts/roboto-italic.ttf") format("truetype");
+  src: url("../fonts/roboto-italic.woff2") format("woff2"), url("../fonts/roboto-italic.woff") format("woff"), url("../fonts/roboto-italic.ttf") format("truetype");
+  src: url("../fonts/roboto-italic.woff2") format("woff2"), url("../fonts/roboto-italic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto.eot");
+  src: url("../fonts/roboto.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto.woff2") format("woff2"), url("../fonts/roboto.woff") format("woff"), url("../fonts/roboto.ttf") format("truetype");
+  src: url("../fonts/roboto.woff2") format("woff2"), url("../fonts/roboto.woff") format("woff"), url("../fonts/roboto.ttf") format("truetype");
+  src: url("../fonts/roboto.woff2") format("woff2"), url("../fonts/roboto.woff") format("woff"); }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/roboto-bold.eot");
+  src: url("../fonts/roboto-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-bold.woff2") format("woff2"), url("../fonts/roboto-bold.woff") format("woff"), url("../fonts/roboto-bold.ttf") format("truetype");
+  src: url("../fonts/roboto-bold.woff2") format("woff2"), url("../fonts/roboto-bold.woff") format("woff"), url("../fonts/roboto-bold.ttf") format("truetype");
+  src: url("../fonts/roboto-bold.woff2") format("woff2"), url("../fonts/roboto-bold.woff") format("woff"); }
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Roboto; }
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
 body {
-  color: #fff;
+  color: #000;
   font-size: 14px;
-  background-color: #001000; }
+  background-color: #ffffff;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400; }
+
+.container {
+  max-width: 90%;
+  padding: 0 15px 0 15px;
+  margin: 0 auto; }
+
+.d-flex {
+  display: flex; }
+
+.d-block {
+  display: block; }
+
+.d-none {
+  display: none; }
+
+.todo__sidebar {
+  position: sticky;
+  height: 100vh;
+  top: 0;
+  width: 250px; }
+  .todo__sidebar .todo__sidebar__add {
+    font-size: 17px;
+    font-weight: 700;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 20px 0; }
+    .todo__sidebar .todo__sidebar__add .button-plus {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      background-color: #3744bd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px; }
+      .todo__sidebar .todo__sidebar__add .button-plus svg {
+        transform: rotate(-45deg); }
+  .todo__sidebar .todo__sidebar__item {
+    margin-bottom: 15px; }
+    .todo__sidebar .todo__sidebar__item .todo__sidebar__item_visible {
+      display: flex;
+      align-items: center;
+      width: 100%; }
+      .todo__sidebar .todo__sidebar__item .todo__sidebar__item_visible svg:first-of-type {
+        margin-right: 10px; }
+      .todo__sidebar .todo__sidebar__item .todo__sidebar__item_visible svg:last-child {
+        display: block;
+        margin-left: auto;
+        margin-right: 10px; }
+    .todo__sidebar .todo__sidebar__item .todo__sidebar__item_hidden {
+      margin-left: 40px; }
+      .todo__sidebar .todo__sidebar__item .todo__sidebar__item_hidden li {
+        margin-top: 10px;
+        color: #aaaeba; }
+
+.todo__itemlist {
+  padding-top: 20px;
+  background-color: #F9FAFC;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 100%; }
+  .todo__itemlist .todo__itemlist__stuck-block {
+    align-items: center;
+    justify-content: space-between; }
+    .todo__itemlist .todo__itemlist__stuck-block .container-1 {
+      width: 300px;
+      vertical-align: middle;
+      white-space: nowrap;
+      position: relative; }
+      .todo__itemlist .todo__itemlist__stuck-block .container-1 svg {
+        position: absolute;
+        top: 40%;
+        margin-left: 15px;
+        margin-top: 10px;
+        z-index: 1;
+        color: #4f5b66; }
+      .todo__itemlist .todo__itemlist__stuck-block .container-1 input#search {
+        width: 300px;
+        height: 40px;
+        background: #E5E5E5;
+        border: none;
+        font-size: 10pt;
+        float: left;
+        color: #8B8C8F;
+        padding-left: 45px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        -webkit-transition: background .55s ease;
+        -moz-transition: background .55s ease;
+        -ms-transition: background .55s ease;
+        -o-transition: background .55s ease;
+        transition: background .55s ease; }
+    .todo__itemlist .todo__itemlist__stuck-block .account-info__visible {
+      align-items: center;
+      justify-content: space-between;
+      margin-right: 20px; }
+      .todo__itemlist .todo__itemlist__stuck-block .account-info__visible .account-info__photo img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px; }
+      .todo__itemlist .todo__itemlist__stuck-block .account-info__visible .account-info__text {
+        margin-left: 7px;
+        font-weight: 500;
+        font-size: 14px; }
+  .todo__itemlist .todo__itemlist__tasks {
+    margin-top: 70px;
+    justify-content: space-between; }
+    .todo__itemlist .todo__itemlist__tasks .tasks__block {
+      margin-left: 20px;
+      width: calc(100% / 3); }
+      .todo__itemlist .todo__itemlist__tasks .tasks__block:first-child {
+        margin-left: 0; }
+      .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__title {
+        justify-content: space-between;
+        width: 100%;
+        align-items: center; }
+        .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__title button {
+          outline: none;
+          border: none;
+          padding: 7px 10px;
+          border-radius: 20px;
+          display: flex;
+          text-align: center;
+          align-items: center; }
+          .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__title button svg {
+            margin-right: 6px; }
+        .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__title p {
+          font-weight: bold;
+          font-size: 17px; }
+      .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list {
+        margin-top: 20px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: calc(100vh - 200px); }
+        .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list::-webkit-scrollbar {
+          width: 2px; }
+        .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list::-webkit-scrollbar-thumb {
+          background-color: #878788;
+          border-radius: 5px; }
+        .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item {
+          margin-bottom: 15px;
+          background-color: #ffffff;
+          padding: 15px;
+          border-radius: 10px; }
+          .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item .task-item__text .task-item__text__category {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 500; }
+            .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item .task-item__text .task-item__text__category span {
+              display: block;
+              width: 6px;
+              height: 6px;
+              border-radius: 100%;
+              background-color: #000;
+              margin-right: 10px; }
+          .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item .task-item__text .task-item__text__name {
+            font-size: 12px;
+            color: #868686;
+            margin-top: 20px; }
+        .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item__deadline__progressbar progress, .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item__deadline__progressbar progress::-webkit-progress-bar {
+          width: 100%;
+          height: 2px;
+          background-color: #dad6d6; }
+        .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item__deadline__progressbar progress::-webkit-progress-value {
+          background-color: #3744BD;
+          height: 2px; }
+        .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item__deadline__delete {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 10px; }
+          .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item__deadline__delete .task-item__deadline__time {
+            color: #A9ADB9;
+            display: flex;
+            align-items: center;
+            font-size: 12px; }
+          .todo__itemlist .todo__itemlist__tasks .tasks__block .tasks__block__list .task-item__deadline__delete .open__menu {
+            display: block;
+            outline: none;
+            border: none;
+            background-color: transparent; }
+
+.modal_addTask {
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 400px;
+  border: 2px solid #000;
+  border-radius: 20px; }
+  .modal_addTask form {
+    margin-top: 20px;
+    display: block; }
+    .modal_addTask form > * {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px; }
+    .modal_addTask form input {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      height: 40px; }
+    .modal_addTask form textarea {
+      width: 200px;
+      height: 200px; }

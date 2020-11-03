@@ -1,14 +1,419 @@
- !<!DOCTYPE html>
- <html>
- <head>
+<!DOCTYPE html>
+<html>
+
+<head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Todo-vue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
   <script src="main.js"></script>
- </head>
- <body>
-  
- </body>
- </html>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="todo d-flex">
+      <div class="todo__sidebar">
+        <div class="todo__sidebar__add d-flex">
+          <p>
+            Категории
+          </p>
+          <span class="button-plus">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"
+                fill="#FFF"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="todo__sidebar__item">
+          <div class="todo__sidebar__item_visible d-flex">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 18H8V16H20V18ZM6 18H4V16H6V18ZM20 13H8V11H20V13ZM6 13H4V11H6V13ZM20 8H8.023V6H20V8ZM6 8H4V6H6V8Z"
+                fill="#aaaeba"></path>
+            </svg>
+            
+            <p>
+              Все категории
+            </p>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.46501 20.485L16.95 12L8.46501 3.515L7.05001 4.929L14.122 12L7.05001 19.071L8.46501 20.485Z"
+                fill="#2E3A59"></path>
+            </svg>
+          </div>
+          <div class="todo__sidebar__item_hidden">
+            <ul>
+              <li>Учеба</li>
+              <li>Программирование</li>
+              <li>Покупки</li>
+            </ul>
+          </div>
+          
+
+        </div>
+        <div class="todo__sidebar__item d-flex">
+<div class="todo__sidebar__item_visible d-flex">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.99 22C6.46846 21.9945 1.99632 17.5149 2 11.9933C2.00368 6.47179 6.48179 1.99816 12.0033 2C17.5249 2.00184 22 6.47845 22 12C21.9967 17.5254 17.5154 22.0022 11.99 22ZM4 12.172C4.04732 16.5732 7.64111 20.1095 12.0425 20.086C16.444 20.0622 19.9995 16.4875 19.9995 12.086C19.9995 7.6845 16.444 4.10977 12.0425 4.08599C7.64111 4.06245 4.04732 7.59876 4 12V12.172ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+              fill="#aaaeba"></path>
+          </svg>
+          <p>
+            Не начата
+          </p>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.46501 20.485L16.95 12L8.46501 3.515L7.05001 4.929L14.122 12L7.05001 19.071L8.46501 20.485Z"
+              fill="#2E3A59"></path>
+          </svg>
+          </div>
+        </div>
+        <div class="todo__sidebar__item d-flex">
+<div class="todo__sidebar__item_visible d-flex">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM11 4.062C6.89401 4.57928 3.86031 8.14271 4.00483 12.2786C4.14935 16.4145 7.42437 19.7575 11.5565 19.987C15.6885 20.2164 19.3135 17.2565 19.915 13.162V13.146V13.117V13.087V13.058V13.042V13.031V13.017V13H11V4.062ZM13 4.062V11H19.938C19.4815 7.37411 16.6259 4.51851 13 4.062Z"
+              fill="#aaaeba"></path>
+          </svg>
+          <p>
+            В процессе
+          </p>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.46501 20.485L16.95 12L8.46501 3.515L7.05001 4.929L14.122 12L7.05001 19.071L8.46501 20.485Z"
+              fill="#2E3A59"></path>
+          </svg>
+          </div>
+        </div>
+        <div class="todo__sidebar__item d-flex">
+<div class="todo__sidebar__item_visible d-flex">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#aaaeba" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16 22H4C2.89543 22 2 21.1046 2 20V8H4V20H16V22ZM20 18H8C6.89543 18 6 17.1046 6 16V4C6 2.89543 6.89543 2 8 2H20C21.1046 2 22 2.89543 22 4V16C22 17.1046 21.1046 18 20 18ZM8 4V16H20V4H8ZM13 13.561L9.293 9.853L10.707 8.439L13 10.733L17.293 6.44L18.707 7.854L13 13.56V13.561Z"
+              fill="#aaaeba"></path>
+          </svg>
+          <p>
+            Сделано
+          </p>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.46501 20.485L16.95 12L8.46501 3.515L7.05001 4.929L14.122 12L7.05001 19.071L8.46501 20.485Z"
+              fill="#2E3A59"></path>
+          </svg>
+          </div>
+        </div>
+      </div>
+      <div class="todo__itemlist">
+        <div class="todo__itemlist__stuck-block d-flex">
+          <div class="search-box">
+            <div class="container-1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.677 19.607L12.962 13.891C10.4196 15.6985 6.91642 15.2564 4.90285 12.8739C2.88929 10.4915 3.03714 6.96361 5.24298 4.75802C7.44824 2.55147 10.9765 2.40298 13.3594 4.41644C15.7422 6.42989 16.1846 9.93347 14.377 12.476L20.092 18.192L18.678 19.606L18.677 19.607ZM9.48498 5.00001C7.58868 4.99958 5.95267 6.3307 5.56745 8.18745C5.18224 10.0442 6.15369 11.9163 7.89366 12.6703C9.63362 13.4242 11.6639 12.8528 12.7552 11.3021C13.8466 9.75129 13.699 7.64734 12.402 6.26402L13.007 6.86402L12.325 6.18402L12.313 6.17202C11.5648 5.4192 10.5464 4.99715 9.48498 5.00001Z"
+                  fill="#8B8C8F"></path>
+              </svg>
+              <input type="search" id="search" placeholder="Search..." />
+            </div>
+          </div>
+          <div class="account-info">
+            <div class="account-info__visible d-flex">
+              <div class="account-info__photo d-block">
+                <img src="img/DSC_0700.jpg" alt="portrait" srcset="">
+              </div>
+              <p class="account-info__text">Константин Федоров</p>
+            </div>
+            <div class="account-info__invisbile d-none">
+              <ul>
+                <li>Выйти</li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="todo__itemlist__tasks d-flex">
+          <div class="tasks__todo tasks__block">
+            <div class="tasks__block__title d-flex">
+              <p>To do</p>
+              <button class="add-task"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.875 7.875H10.125V1.125C10.125 0.826631 10.0065 0.540484 9.79549 0.329505C9.58452 0.118527 9.29837 0 9 0C8.70163 0 8.41548 0.118527 8.20451 0.329505C7.99353 0.540484 7.875 0.826631 7.875 1.125V7.875H1.125C0.826631 7.875 0.540484 7.99353 0.329505 8.20451C0.118527 8.41548 0 8.70163 0 9C0 9.29837 0.118527 9.58452 0.329505 9.79549C0.540484 10.0065 0.826631 10.125 1.125 10.125H7.875V16.875C7.875 17.1734 7.99353 17.4595 8.20451 17.6705C8.41548 17.8815 8.70163 18 9 18C9.29837 18 9.58452 17.8815 9.79549 17.6705C10.0065 17.4595 10.125 17.1734 10.125 16.875V10.125H16.875C17.1734 10.125 17.4595 10.0065 17.6705 9.79549C17.8815 9.58452 18 9.29837 18 9C18 8.70163 17.8815 8.41548 17.6705 8.20451C17.4595 7.99353 17.1734 7.875 16.875 7.875Z"
+                    fill="#000" />
+                </svg>New task</button>
+            </div>
+            <div class="tasks__block__list">
+              <div class="task-item">
+                <div class="task-item__menu d-none">
+                  <div class="task-item__menu__item">
+                    To progress
+                  </div>
+                  <div class="task-item__menu__item">Done</div>
+                  <div class="task-item__menu__item">Delete</div>
+                </div>
+                <div class="task-item__text">
+                  <p class="task-item__text__category"><span class="point-color"></span>Верстка</p>
+                  <p class="task-item__text__name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia modi sint officia, ullam culpa eius expedita numquam quibusdam quisquam!</p>
+                </div>
+                <div class="task-item__deadline">
+                  <div class="task-item__deadline__progressbar">
+                    <progress id="progressbar" value="50" max="100"></progress>
+                  </div>
+                  <div class="task-item__deadline__delete">
+                    <p class="task-item__deadline__time"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C19.995 7.58378 16.4162 4.00496 12 4ZM17 13H11V7H13V11H17V13Z"
+							fill="#A9ADB9"></path>
+					</svg>
+					Due in 3 days</p>
+                    <button class="open__menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12C20 12.5304 19.7893 13.0391 19.4142 13.4142C19.0391 13.7893 18.5304 14 18 14ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14ZM6 14C4.89543 14 4 13.1046 4 12C4 10.8954 4.89543 10 6 10C7.10457 10 8 10.8954 8 12C8 12.5304 7.78929 13.0391 7.41421 13.4142C7.03914 13.7893 6.53043 14 6 14Z"
+							fill="#A9ADB9"></path>
+					</svg>
+					</button>
+                  </div>
+                </div>
+			  </div>
+			<div class="task-item">
+				<div class="task-item__menu d-none">
+					<div class="task-item__menu__item">
+						To progress
+					</div>
+					<div class="task-item__menu__item">Done</div>
+					<div class="task-item__menu__item">Delete</div>
+				</div>
+				<div class="task-item__text">
+					<p class="task-item__text__category"><span class="point-color"></span>Верстка</p>
+					<p class="task-item__text__name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia modi sint
+						officia, ullam culpa eius expedita numquam quibusdam quisquam!</p>
+				</div>
+				<div class="task-item__deadline">
+					<div class="task-item__deadline__progressbar">
+            <progress id="progressbar" value="50" max="100"></progress>
+          </div>
+					<div class="task-item__deadline__delete">
+						<p class="task-item__deadline__time"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C19.995 7.58378 16.4162 4.00496 12 4ZM17 13H11V7H13V11H17V13Z"
+									fill="#A9ADB9"></path>
+							</svg>
+							Due in 3 days</p>
+						<button class="open__menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12C20 12.5304 19.7893 13.0391 19.4142 13.4142C19.0391 13.7893 18.5304 14 18 14ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14ZM6 14C4.89543 14 4 13.1046 4 12C4 10.8954 4.89543 10 6 10C7.10457 10 8 10.8954 8 12C8 12.5304 7.78929 13.0391 7.41421 13.4142C7.03914 13.7893 6.53043 14 6 14Z"
+									fill="#A9ADB9"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+            </div>
+          </div>
+
+          <div class="tasks__in-progress tasks__block">
+            <div class="tasks__block__title d-flex">
+              <p>In progress</p>
+              <button class="add-task"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.875 7.875H10.125V1.125C10.125 0.826631 10.0065 0.540484 9.79549 0.329505C9.58452 0.118527 9.29837 0 9 0C8.70163 0 8.41548 0.118527 8.20451 0.329505C7.99353 0.540484 7.875 0.826631 7.875 1.125V7.875H1.125C0.826631 7.875 0.540484 7.99353 0.329505 8.20451C0.118527 8.41548 0 8.70163 0 9C0 9.29837 0.118527 9.58452 0.329505 9.79549C0.540484 10.0065 0.826631 10.125 1.125 10.125H7.875V16.875C7.875 17.1734 7.99353 17.4595 8.20451 17.6705C8.41548 17.8815 8.70163 18 9 18C9.29837 18 9.58452 17.8815 9.79549 17.6705C10.0065 17.4595 10.125 17.1734 10.125 16.875V10.125H16.875C17.1734 10.125 17.4595 10.0065 17.6705 9.79549C17.8815 9.58452 18 9.29837 18 9C18 8.70163 17.8815 8.41548 17.6705 8.20451C17.4595 7.99353 17.1734 7.875 16.875 7.875Z"
+                    fill="#000" />
+                </svg>New task</button>
+            </div>
+            <div class="tasks__block__list">
+              <div class="task-item">
+                <div class="task-item__menu d-none">
+                  <div class="task-item__menu__item">
+                    To progress
+                  </div>
+                  <div class="task-item__menu__item">Done</div>
+                  <div class="task-item__menu__item">Delete</div>
+                </div>
+                <div class="task-item__text">
+                  <p class="task-item__text__category"><span class="point-color"></span>Верстка</p>
+                  <p class="task-item__text__name">Изучить html css</p>
+                </div>
+                <div class="task-item__deadline">
+                  <div class="task-item__deadline__progressbar">
+                    <progress id="progressbar" value="50" max="100"></progress>
+                  </div>
+                  <div class="task-item__deadline__delete">
+                    <p class="task-item__deadline__time"><span class="icon-watch"></span>Due in 3 days</p>
+                    <button class="open__menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12C20 12.5304 19.7893 13.0391 19.4142 13.4142C19.0391 13.7893 18.5304 14 18 14ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14ZM6 14C4.89543 14 4 13.1046 4 12C4 10.8954 4.89543 10 6 10C7.10457 10 8 10.8954 8 12C8 12.5304 7.78929 13.0391 7.41421 13.4142C7.03914 13.7893 6.53043 14 6 14Z"
+                        fill="#A9ADB9"></path>
+                    </svg></button>
+                  </div>
+                </div>
+			  </div>
+			<div class="task-item">
+				<div class="task-item__menu d-none">
+					<div class="task-item__menu__item">
+						To progress
+					</div>
+					<div class="task-item__menu__item">Done</div>
+					<div class="task-item__menu__item">Delete</div>
+				</div>
+				<div class="task-item__text">
+					<p class="task-item__text__category"><span class="point-color"></span>Верстка</p>
+					<p class="task-item__text__name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia modi sint
+						officia, ullam culpa eius expedita numquam quibusdam quisquam!</p>
+				</div>
+				<div class="task-item__deadline">
+					<div class="task-item__deadline__progressbar">
+            <progress id="progressbar" value="50" max="100"></progress>
+          </div>
+					<div class="task-item__deadline__delete">
+						<p class="task-item__deadline__time"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C19.995 7.58378 16.4162 4.00496 12 4ZM17 13H11V7H13V11H17V13Z"
+									fill="#A9ADB9"></path>
+							</svg>
+							Due in 3 days</p>
+						<button class="open__menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12C20 12.5304 19.7893 13.0391 19.4142 13.4142C19.0391 13.7893 18.5304 14 18 14ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14ZM6 14C4.89543 14 4 13.1046 4 12C4 10.8954 4.89543 10 6 10C7.10457 10 8 10.8954 8 12C8 12.5304 7.78929 13.0391 7.41421 13.4142C7.03914 13.7893 6.53043 14 6 14Z"
+									fill="#A9ADB9"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="task-item">
+				<div class="task-item__menu d-none">
+					<div class="task-item__menu__item">
+						To progress
+					</div>
+					<div class="task-item__menu__item">Done</div>
+					<div class="task-item__menu__item">Delete</div>
+				</div>
+				<div class="task-item__text">
+					<p class="task-item__text__category"><span class="point-color"></span>Верстка</p>
+					<p class="task-item__text__name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia modi sint
+						officia, ullam culpa eius expedita numquam quibusdam quisquam!</p>
+				</div>
+				<div class="task-item__deadline">
+					<div class="task-item__deadline__progressbar">
+            <progress id="progressbar" value="50" max="100"></progress>
+          </div>
+					<div class="task-item__deadline__delete">
+						<p class="task-item__deadline__time"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C19.995 7.58378 16.4162 4.00496 12 4ZM17 13H11V7H13V11H17V13Z"
+									fill="#A9ADB9"></path>
+							</svg>
+							Due in 3 days</p>
+						<button class="open__menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12C20 12.5304 19.7893 13.0391 19.4142 13.4142C19.0391 13.7893 18.5304 14 18 14ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14ZM6 14C4.89543 14 4 13.1046 4 12C4 10.8954 4.89543 10 6 10C7.10457 10 8 10.8954 8 12C8 12.5304 7.78929 13.0391 7.41421 13.4142C7.03914 13.7893 6.53043 14 6 14Z"
+									fill="#A9ADB9"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="task-item">
+				<div class="task-item__menu d-none">
+					<div class="task-item__menu__item">
+						To progress
+					</div>
+					<div class="task-item__menu__item">Done</div>
+					<div class="task-item__menu__item">Delete</div>
+				</div>
+				<div class="task-item__text">
+					<p class="task-item__text__category"><span class="point-color"></span>Верстка</p>
+					<p class="task-item__text__name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia modi sint
+						officia, ullam culpa eius expedita numquam quibusdam quisquam!</p>
+				</div>
+				<div class="task-item__deadline">
+					<div class="task-item__deadline__progressbar">
+            <progress id="progressbar" value="50" max="100"></progress>
+          </div>
+					<div class="task-item__deadline__delete">
+						<p class="task-item__deadline__time"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C19.995 7.58378 16.4162 4.00496 12 4ZM17 13H11V7H13V11H17V13Z"
+									fill="#A9ADB9"></path>
+							</svg>
+							Due in 3 days</p>
+						<button class="open__menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12C20 12.5304 19.7893 13.0391 19.4142 13.4142C19.0391 13.7893 18.5304 14 18 14ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14ZM6 14C4.89543 14 4 13.1046 4 12C4 10.8954 4.89543 10 6 10C7.10457 10 8 10.8954 8 12C8 12.5304 7.78929 13.0391 7.41421 13.4142C7.03914 13.7893 6.53043 14 6 14Z"
+									fill="#A9ADB9"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+            </div>
+          </div>
+          <div class="tasks__done tasks__block">
+            <div class="tasks__block__title d-flex">
+              <p>Done</p>
+              <button class="add-task"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.875 7.875H10.125V1.125C10.125 0.826631 10.0065 0.540484 9.79549 0.329505C9.58452 0.118527 9.29837 0 9 0C8.70163 0 8.41548 0.118527 8.20451 0.329505C7.99353 0.540484 7.875 0.826631 7.875 1.125V7.875H1.125C0.826631 7.875 0.540484 7.99353 0.329505 8.20451C0.118527 8.41548 0 8.70163 0 9C0 9.29837 0.118527 9.58452 0.329505 9.79549C0.540484 10.0065 0.826631 10.125 1.125 10.125H7.875V16.875C7.875 17.1734 7.99353 17.4595 8.20451 17.6705C8.41548 17.8815 8.70163 18 9 18C9.29837 18 9.58452 17.8815 9.79549 17.6705C10.0065 17.4595 10.125 17.1734 10.125 16.875V10.125H16.875C17.1734 10.125 17.4595 10.0065 17.6705 9.79549C17.8815 9.58452 18 9.29837 18 9C18 8.70163 17.8815 8.41548 17.6705 8.20451C17.4595 7.99353 17.1734 7.875 16.875 7.875Z"
+                    fill="#000" />
+                </svg>New task</button>
+            </div>
+            <div class="tasks__block__list">
+              <div class="task-item">
+                <div class="task-item__menu d-none">
+                  <div class="task-item__menu__item">
+                    To progress
+                  </div>
+                  <div class="task-item__menu__item">Done</div>
+                  <div class="task-item__menu__item">Delete</div>
+                </div>
+                <div class="task-item__text">
+                  <p class="task-item__text__category"><span class="point-color"></span>Верстка</p>
+                  <p class="task-item__text__name">Изучить html css</p>
+                </div>
+                <div class="task-item__deadline">
+                  <div class="task-item__deadline__progressbar">
+                    <progress id="progressbar" value="50" max="100"></progress>
+                  </div>
+                  <div class="task-item__deadline__delete">
+                    <p class="task-item__deadline__time"><span class="icon-watch"></span>Due in 3 days</p>
+                    <button class="open__menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12C20 12.5304 19.7893 13.0391 19.4142 13.4142C19.0391 13.7893 18.5304 14 18 14ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14ZM6 14C4.89543 14 4 13.1046 4 12C4 10.8954 4.89543 10 6 10C7.10457 10 8 10.8954 8 12C8 12.5304 7.78929 13.0391 7.41421 13.4142C7.03914 13.7893 6.53043 14 6 14Z"
+                        fill="#A9ADB9"></path>
+                    </svg></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal_addTask">
+    <form action="">
+      <input type="text" name="Name" id="Name" placeholder="Название">
+      <textarea type="text" class="description" id="description" placeholder="Описание">
+      </textarea>
+      <select name="category" id="category">
+        <option value="Study">Учеба</option>
+        <option value="Programming">Программирование</option>
+        <option value="Buys">Покупки</option>
+      </select>
+      <button type="submit">Добавить</button>
+    </form>
+  </div>
+
+</body>
+
+</html>
